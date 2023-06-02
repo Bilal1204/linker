@@ -12,7 +12,7 @@ const {MONGO_URI,SECRET_JWT} = require('./config/keys')
 const port = process.env.PORT || 8080
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({credentials: true, origin: true}))
 dotenv.config();
 
 mongoose.set('strictQuery',false)
@@ -21,9 +21,9 @@ mongoose.connect(MONGO_URI)
 .then(()=>console.log('Mongodb Connected'))
 .catch(err => console.log(err))
 
-app.get('/',(req,res) =>{
-    res.send('Hello There')
-})
+// app.get('/',(req,res) =>{
+//     res.send('Hello There')
+// })
 
 app.post('/api/register',registerUser)
 app.post('/api/login',loginUser)

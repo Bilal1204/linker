@@ -40,7 +40,7 @@ const Profile = () => {
 
     const saveSocials = e =>{
         e.preventDefault();
-        fetch(`http://localhost:8080/save/socials`,{
+        fetch(`https://linkers.vercel.app/save/socials`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -60,7 +60,7 @@ const Profile = () => {
 
     const saveProfile = e =>{
         e.preventDefault();
-        fetch(`http://localhost:8080/save/profile`,{
+        fetch(`https://linkers.vercel.app/save/profile`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -80,7 +80,7 @@ const Profile = () => {
 
     useEffect(() =>{
         if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-        fetch(`http://localhost:8080/load/socials`,{
+        fetch(`https://linkers.vercel.app/load/socials`,{
             method : 'POST',
             headers:{
                 'Content-Type' : 'application/json'

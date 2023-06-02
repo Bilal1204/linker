@@ -22,7 +22,7 @@ const Handle = () => {
 
     useEffect(() =>{
         if(window.location?.pathname){
-            fetch(`http://localhost:8080/get/socials${window.location.pathname}`)
+            fetch(`https://linkers.vercel.app/get/socials${window.location.pathname}`)
             .then(res => res.json())
             .then(data => {
                 if(data.status === 'error') return toast.error(data.error)
@@ -36,7 +36,7 @@ const Handle = () => {
 
     useEffect(() =>{
         if(window.location.pathname){
-            fetch(`http://localhost:8080/get${window.location.pathname}`)
+            fetch(`https://linkers.vercel.app/get${window.location.pathname}`)
             .then(res => res.json())
             .then(data => {
                 if(data.status === 'error') return toast.error(data.error)

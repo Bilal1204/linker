@@ -32,7 +32,7 @@ const Links = () => {
     const linksArray = Object.values(links)
     const titlesArray = Object.values(title)
     const linkData = linksArray.map((link,i) =>({ link, title: titlesArray[i] }))
-    fetch('http://localhost:8080/save/links',{
+    fetch('https://linkers.vercel.app/save/links',{
       method : 'POST',
       headers:{
           'Content-Type' : 'application/json'
@@ -51,7 +51,7 @@ const Links = () => {
 
   useEffect(() =>{
     if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-    fetch(`http://localhost:8080/load/links`,{
+    fetch(`https://linkers.vercel.app/load/links`,{
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json'

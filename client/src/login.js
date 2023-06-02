@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleLogin = (e) =>{
     e.preventDefault();
-    fetch('http://localhost:8080/api/login',{
+    fetch('https://linkers.vercel.app/api/login',{
       method : 'POST',
       headers : {
         'content-type' : 'application/json'
