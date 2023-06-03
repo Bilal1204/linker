@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const Share = () => {
     const navigate  = useNavigate();
     const copyLink = () =>{
-        navigator.clipboard.writeText(`https://linkers.vercel.app${window.location.pathname}`)
+        navigator.clipboard.writeText(`${window.location.href}`)
         toast('Copied to Clipboard')
     }
 

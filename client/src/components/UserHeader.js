@@ -21,7 +21,7 @@ const UserHeader = () => {
     useEffect(() => {
         // console.log({token : localStorage.getItem('LinkTreeToken')})
         if(localStorage.getItem('LinkTreeToken') === '') return navigate('/')
-        fetch('https://linkers.vercel.app/data/dashboard', {
+        fetch('/data/dashboard', {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'
@@ -45,13 +45,13 @@ const UserHeader = () => {
     <>
     <header className='flex flex-row justify-between items-center '>
         <div className="flex flex-col md:flex-row p-5">
-            <a href='https://linkers.vercel.app/edit/links'>
+            <a href='/edit/links'>
             <button className='inline-flex w-full md:w-auto px-5 py-3 text-purple-700 font-bold rounded-md mb-3 border-2 border-purple-400 md:ml-4 hover:bg-slate-200'>
                 <img src="/svg/url.svg" alt="" className='w-6 mr-3'/>
                 Edit Links
             </button>
             </a>
-            <a href='https://linkers.vercel.app/edit/profile'>
+            <a href='/edit/profile'>
             <button className='inline-flex w-full md:w-auto px-5 py-3 text-purple-700 font-bold rounded-md mb-3 border-2 border-purple-400 md:ml-4 hover:bg-slate-200'>
                 <img src="/svg/user.svg" alt="" className='w-6 mr-3'/>
                 Edit Profile
@@ -59,7 +59,7 @@ const UserHeader = () => {
             </a>
         </div>
         <div className="flex flex-row">
-        <a href={`https://linkers.vercel.app/${handle}`}>
+        <a href={`/${handle}`}>
             <div className='inline-flex mr-5 text-right items-center'>
                 <div className="text-xs md:text-md flex flex-col flex-wrap mr-3">
                     <span className='font-bold'>{handle}</span>

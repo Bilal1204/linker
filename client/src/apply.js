@@ -23,7 +23,7 @@ const Apply = () => {
     e.preventDefault();
     if(!category) return toast.error('Add a Category')
     //Backend
-    fetch('https://linkers.vercel.app/api/register',{
+    fetch('/api/register',{
       method : 'POST',
       headers : {
         'content-type' : 'application/json'

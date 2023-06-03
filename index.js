@@ -10,6 +10,7 @@ const {saveSocials,saveProfile, saveLinks} = require('./controllers/saveItems')
 const {loadSocials, loadLinks} = require('./controllers/loadPrevious')
 const {MONGO_URI,SECRET_JWT} = require('./config/keys')
 const port = process.env.PORT || 8080
+const path = require('path')
 
 app.use(express.json())
 app.use(cors({credentials: true, origin: true}))
@@ -41,13 +42,22 @@ app.get('/get/socials/:handle', getUserSocials);
 app.post('/save/profile',saveProfile)
 app.post('/save/links',saveLinks)
 
-if(process.env.NODE_ENV == 'production'){
-    const path = require('path')
-    app.get('/',(req,res) =>{
-        app.use(express.static(path.resolve(__dirname,'client','build')))
-        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
-    })
-}
+// if(process.env.NODE_ENV == 'production'){
+//     app.get('/',(req,res)=>{
+//         app.use(express.static(path.resolve(__dirname,'client','build')))
+//         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+//     })
+// }
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./client/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 
 app.listen(port,()=>{
     console.log(`Server running on port ${port}`)

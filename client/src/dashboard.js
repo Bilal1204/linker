@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if(!localStorage.getItem('LinkTreeToken')) return window.location.href = '/'
-        fetch('http://localhost:8080/data/dashboard', {
+        fetch('/data/dashboard', {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'
