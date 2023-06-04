@@ -3,6 +3,7 @@ import UserContext from '../context/userContext'
 import UserHeader from '../components/UserHeader'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import url from '../url'
 
 const Profile = () => {
 
@@ -40,7 +41,7 @@ const Profile = () => {
 
     const saveSocials = e =>{
         e.preventDefault();
-        fetch(`/save/socials`,{
+        fetch(`${url}/save/socials`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -60,7 +61,7 @@ const Profile = () => {
 
     const saveProfile = e =>{
         e.preventDefault();
-        fetch(`/save/profile`,{
+        fetch(`${url}/save/profile`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -80,7 +81,7 @@ const Profile = () => {
 
     useEffect(() =>{
         if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-        fetch(`/load/socials`,{
+        fetch(`${url}/load/socials`,{
             method : 'POST',
             headers:{
                 'Content-Type' : 'application/json'

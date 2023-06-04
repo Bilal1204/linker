@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import {useNavigate, Link} from "react-router-dom"
 import './index.css'
 import NavBar from './components/Navbar';
+import url from './url'
 
 
 const Apply = () => {
@@ -23,7 +24,7 @@ const Apply = () => {
     e.preventDefault();
     if(!category) return toast.error('Add a Category')
     //Backend
-    fetch('/api/register',{
+    fetch(`${url}/api/register`,{
       method : 'POST',
       headers : {
         'content-type' : 'application/json'

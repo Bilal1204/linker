@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080
 const path = require('path')
 
 app.use(express.json())
-app.use(cors({credentials: true, origin: true}))
+app.use(cors())
 dotenv.config();
 
 mongoose.set('strictQuery',false)

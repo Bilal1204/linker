@@ -3,6 +3,7 @@ import LinkBox from './components/LinkBox'
 import UserHeader from './components/UserHeader'
 import { toast } from 'react-toastify'
 import UserContext from './context/userContext'
+import url from './url'
 
 const Dashboard = () => {
 
@@ -11,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if(!localStorage.getItem('LinkTreeToken')) return window.location.href = '/'
-        fetch('/data/dashboard', {
+        fetch(`${url}/data/dashboard`, {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'

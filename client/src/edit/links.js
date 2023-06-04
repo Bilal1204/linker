@@ -2,6 +2,7 @@ import UserHeader from '../components/UserHeader'
 import React, { useState, useEffect, useContext } from 'react'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import url from '../url'
 
 const Links = () => {
 
@@ -32,7 +33,7 @@ const Links = () => {
     const linksArray = Object.values(links)
     const titlesArray = Object.values(title)
     const linkData = linksArray.map((link,i) =>({ link, title: titlesArray[i] }))
-    fetch('/save/links',{
+    fetch(`${url}/save/links`,{
       method : 'POST',
       headers:{
           'Content-Type' : 'application/json'
@@ -51,7 +52,7 @@ const Links = () => {
 
   useEffect(() =>{
     if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-    fetch(`/load/links`,{
+    fetch(`${url}/load/links`,{
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json'

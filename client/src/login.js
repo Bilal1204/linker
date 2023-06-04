@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import {useNavigate, Link} from "react-router-dom"
 import './index.css'
 import NavBar from './components/Navbar';
+import url from './url'
 
 const Login = () => {
 
@@ -12,7 +13,7 @@ const Login = () => {
 
   const handleLogin = (e) =>{
     e.preventDefault();
-    fetch('/api/login',{
+    fetch(`${url}/api/login`,{
       method : 'POST',
       headers : {
         'content-type' : 'application/json'

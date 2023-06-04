@@ -2,6 +2,7 @@ import React,{useContext, useEffect} from 'react'
 import {useNavigate} from "react-router-dom"
 import UserContext from '../context/userContext';
 import { toast } from 'react-toastify';
+import url from '../url'
 
 const UserHeader = () => {
 
@@ -21,7 +22,7 @@ const UserHeader = () => {
     useEffect(() => {
         // console.log({token : localStorage.getItem('LinkTreeToken')})
         if(localStorage.getItem('LinkTreeToken') === '') return navigate('/')
-        fetch('/data/dashboard', {
+        fetch(`${url}/data/dashboard`, {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'

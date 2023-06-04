@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import LinkTree from './components/LinkTree';
 import SocialTree from './components/SocialTree';
 import Share from './components/Share';
+import url from './url'
 
 const Handle = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Handle = () => {
 
     useEffect(() =>{
         if(window.location?.pathname){
-            fetch(`/get/socials${window.location.pathname}`)
+            fetch(`${url}/get/socials${window.location.pathname}`)
             .then(res => res.json())
             .then(data => {
                 if(data.status === 'error') return toast.error(data.error)
@@ -36,7 +37,7 @@ const Handle = () => {
 
     useEffect(() =>{
         if(window.location.pathname){
-            fetch(`/get${window.location.pathname}`)
+            fetch(`${url}/get${window.location.pathname}`)
             .then(res => res.json())
             .then(data => {
                 if(data.status === 'error') return toast.error(data.error)
