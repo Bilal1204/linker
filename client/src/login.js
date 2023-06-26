@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = (e) =>{
     e.preventDefault();
-    fetch(`${url}/api/login`,{
+    fetch(`/api/login`,{
       method : 'POST',
       headers : {
         'content-type' : 'application/json'

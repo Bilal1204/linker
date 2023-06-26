@@ -33,7 +33,7 @@ const Links = () => {
     const linksArray = Object.values(links)
     const titlesArray = Object.values(title)
     const linkData = linksArray.map((link,i) =>({ link, title: titlesArray[i] }))
-    fetch(`${url}/save/links`,{
+    fetch(`/save/links`,{
       method : 'POST',
       headers:{
           'Content-Type' : 'application/json'
@@ -52,7 +52,7 @@ const Links = () => {
 
   useEffect(() =>{
     if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-    fetch(`${url}/load/links`,{
+    fetch(`/load/links`,{
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json'

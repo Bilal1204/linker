@@ -41,7 +41,7 @@ const Profile = () => {
 
     const saveSocials = e =>{
         e.preventDefault();
-        fetch(`${url}/save/socials`,{
+        fetch(`/save/socials`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -61,7 +61,7 @@ const Profile = () => {
 
     const saveProfile = e =>{
         e.preventDefault();
-        fetch(`${url}/save/profile`,{
+        fetch(`/save/profile`,{
             method : 'POST',
             headers :{
                 'Content-Type' : 'application/json'
@@ -81,7 +81,7 @@ const Profile = () => {
 
     useEffect(() =>{
         if(!localStorage.getItem('LinkTreeToken')) return navigate('/')
-        fetch(`${url}/load/socials`,{
+        fetch(`/load/socials`,{
             method : 'POST',
             headers:{
                 'Content-Type' : 'application/json'

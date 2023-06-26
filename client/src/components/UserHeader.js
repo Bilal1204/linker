@@ -22,7 +22,7 @@ const UserHeader = () => {
     useEffect(() => {
         // console.log({token : localStorage.getItem('LinkTreeToken')})
         if(localStorage.getItem('LinkTreeToken') === '') return navigate('/')
-        fetch(`${url}/data/dashboard`, {
+        fetch(`http://localhost:8080/data/dashboard`, {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'

@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if(!localStorage.getItem('LinkTreeToken')) return window.location.href = '/'
-        fetch(`${url}/data/dashboard`, {
+        fetch(`/data/dashboard`, {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'
