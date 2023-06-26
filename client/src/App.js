@@ -31,8 +31,8 @@ function App() {
           {/* <Route index element={<Home />} /> */}
           <Route path="apply" element={<Apply />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="edit/links" element={<Links />} />
-          <Route path="edit/profile" element={<Profile />} />
+          <Route path="editLinks" element={<Links />} />
+          <Route path="editProfile" element={<Profile />} />
           <Route path={window.location?.pathname} element={<Handle />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         

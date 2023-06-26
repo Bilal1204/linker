@@ -46,13 +46,13 @@ const UserHeader = () => {
     <>
     <header className='flex flex-row justify-between items-center '>
         <div className="flex flex-col md:flex-row p-5">
-            <a href='/edit/links'>
+            <a href='/editLinks'>
             <button className='inline-flex w-full md:w-auto px-5 py-3 text-purple-700 font-bold rounded-md mb-3 border-2 border-purple-400 md:ml-4 hover:bg-slate-200'>
                 <img src="/svg/url.svg" alt="" className='w-6 mr-3'/>
                 Edit Links
             </button>
             </a>
-            <a href='/edit/profile'>
+            <a href='/editProfile'>
             <button className='inline-flex w-full md:w-auto px-5 py-3 text-purple-700 font-bold rounded-md mb-3 border-2 border-purple-400 md:ml-4 hover:bg-slate-200'>
                 <img src="/svg/user.svg" alt="" className='w-6 mr-3'/>
                 Edit Profile
